@@ -3,134 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TINI MONTELIBANO | CREATIVE DIRECTOR</title>
+    <title>TINI MONTELIBANO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fdfdfd; color: #1a1a1a; scroll-behavior: smooth; }
-        .nav-text { font-size: 10px; letter-spacing: 0.15em; color: #888; transition: color 0.3s; text-transform: uppercase; }
+        body { font-family: 'Inter', sans-serif; background-color: #fdfdfd; color: #1a1a1a; overflow: hidden; }
+        .nav-text { font-size: 10px; letter-spacing: 0.15em; color: #888; transition: color 0.3s; text-transform: uppercase; cursor: pointer; }
         .nav-text:hover { color: #000; }
+        
+        /* Modal Styles */
+        .modal { position: fixed; inset: 0; background: white; z-index: 100; display: none; overflow-y: auto; padding: 100px 40px; }
+        .modal.active { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .close-btn { position: fixed; top: 30px; right: 40px; font-size: 20px; cursor: pointer; z-index: 110; }
         .hero-split { height: 100vh; display: flex; flex-direction: column; }
         @media (min-width: 768px) { .hero-split { flex-direction: row; } }
-        .hero-panel { flex: 1; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 0.5px solid #eee; }
-        .hero-label { position: absolute; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3em; color: white; border: 1px solid white; padding: 6px 20px; z-index: 10; }
-        .section-header { font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; border-bottom: 1px solid #000; display: inline-block; margin-bottom: 3rem; font-weight: 400; }
-        .price-row { border-bottom: 1px solid #eee; }
-        .uniform-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: #aaa; margin-bottom: 4px; display: block; }
+        .hero-panel { flex: 1; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 0.5px solid #eee; cursor: pointer; }
+        .hero-label { position: absolute; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3em; color: white; border: 1px solid white; padding: 6px 20px; z-index: 10; pointer-events: none; }
     </style>
 </head>
 <body>
 
     <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-6 bg-white/90 backdrop-blur-md border-b border-gray-50">
         <div class="hidden md:flex gap-8">
-            <a href="#partnerships" class="nav-text">Partnerships</a>
-            <a href="#studio" class="nav-text">Studio</a>
+            <span onclick="openModal('partnerships')" class="nav-text">Partnerships</span>
+            <span onclick="openModal('studio')" class="nav-text">Studio</span>
         </div>
         <div class="absolute left-1/2 -translate-x-1/2 text-center">
             <a href="#" class="text-xs font-normal tracking-[0.4em] uppercase">Tini Montelibano</a>
         </div>
         <div class="flex gap-8">
-            <a href="#archive" class="nav-text">Archive</a>
-            <a href="#inquire" class="nav-text">Inquire</a>
+            <span onclick="openModal('archive')" class="nav-text">Archive</span>
+            <span onclick="openModal('inquire')" class="nav-text">Inquire</span>
         </div>
     </nav>
 
     <div class="hero-split pt-[60px]">
-        <a href="#partnerships" class="hero-panel bg-gray-100 group">
+        <div onclick="openModal('partnerships')" class="hero-panel bg-gray-100 group">
             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover grayscale brightness-75 transition-transform duration-1000 group-hover:scale-110" alt="Roster">
             <span class="hero-label">Roster</span>
-        </a>
-        <a href="#inquire" class="hero-panel bg-gray-200 group">
+        </div>
+        <div onclick="openModal('inquire')" class="hero-panel bg-gray-200 group">
             <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover grayscale brightness-75 transition-transform duration-1000 group-hover:scale-110" alt="Individual">
             <span class="hero-label">Individual</span>
-        </a>
+        </div>
     </div>
 
-    <main class="max-w-5xl mx-auto px-8 py-32">
-        
-        <section id="partnerships" class="mb-48">
-            <h2 class="section-header">01. Agency Partnerships</h2>
-            <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-8">Collaborations: Luminary, Eiveren, Mercator, I-Agency </p>
-            
-            <div class="space-y-0 border-t border-black">
-                <div class="price-row flex justify-between items-center py-12">
-                    <div>
-                        <h3 class="text-2xl uppercase font-light tracking-tighter">Starter Pack</h3>
-                        <p class="text-[9px] uppercase tracking-widest text-gray-400">03 Talent — 8% Reduction [cite: 142, 143, 144]</p>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-xl font-normal tracking-tight">24,150 PHP [cite: 145]</p>
-                        <p class="text-[9px] uppercase text-gray-300">Bi-Annual Update [cite: 164]</p>
-                    </div>
-                </div>
-                <div class="price-row flex justify-between items-center py-12">
-                    <div>
-                        <h3 class="text-2xl uppercase font-light tracking-tighter">Division Refresh</h3>
-                        <p class="text-[9px] uppercase tracking-widest text-gray-400">10 Talent — 11% Reduction [cite: 146, 147, 148]</p>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-xl font-normal tracking-tight">77,875 PHP [cite: 156]</p>
-                    </div>
-                </div>
-                <div class="price-row flex justify-between items-center py-12 bg-black text-white px-4 -mx-4">
-                    <div>
-                        <h3 class="text-2xl uppercase font-light tracking-tighter">Elite Partnership</h3>
-                        <p class="text-[9px] uppercase tracking-widest text-gray-500">20 Talent — 15% Reduction [cite: 150, 151, 152]</p>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-xl font-normal tracking-tight text-white">148,750 PHP [cite: 157]</p>
-                    </div>
-                </div>
+    <div id="partnerships" class="modal">
+        <span class="close-btn" onclick="closeModal()">×</span>
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-[10px] uppercase tracking-widest border-b border-black pb-2 mb-12">01. Agency Partnerships</h2>
+            <p class="text-[9px] uppercase tracking-widest text-gray-400 mb-8">Worked with: @luminary.manila @empireph.mercator @eiverenmodels @imagencymanila</p>
+            <div class="space-y-8">
+                <div class="flex justify-between border-b pb-4"><span>Starter Pack (03 Talent)</span><b>24,150 PHP</b></div>
+                <div class="flex justify-between border-b pb-4"><span>Division Refresh (10 Talent)</span><b>77,875 PHP</b></div>
+                <div class="flex justify-between border-b pb-4 font-bold"><span>Elite Partnership (20 Talent)</span><b>148,750 PHP</b></div>
             </div>
-        </section>
+            <p class="mt-8 text-[9px] italic text-gray-400">Rates based on standard (2 updates per year / per model)</p>
+        </div>
+    </div>
 
-        <section id="studio" class="mb-48 grid md:grid-cols-2 gap-24">
-            <div>
-                <h2 class="section-header">02. Studio Protocol</h2>
-                <ul class="space-y-8 text-sm font-light leading-relaxed">
-                    <li><span class="uniform-tag">The Format</span> 20-30 minute high-efficiency sessions with 48-hour digital proof delivery. [cite: 163, 166]</li>
-                    <li><span class="uniform-tag">Direction</span> Curated creative direction by Tini Montelibano focused on international marketability. [cite: 165]</li>
-                </ul>
-            </div>
-            <div>
-                <h2 class="section-header">03. Uniform</h2>
-                <div class="space-y-6 text-[11px] uppercase tracking-widest leading-loose">
-                    <p><span class="text-gray-400">Top /</span> Black Tank or Tube </p>
-                    <p><span class="text-gray-400">Bottom /</span> Black Jeans or Trousers </p>
-                    <p><span class="text-gray-400">Shoes /</span> Black Open Toed Heels </p>
+    <div id="studio" class="modal">
+        <span class="close-btn" onclick="closeModal()">×</span>
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-[10px] uppercase tracking-widest border-b border-black pb-2 mb-12">02. Studio Protocol</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="font-bold text-xs uppercase mb-4">The Format</h3>
+                    <ul class="text-sm space-y-2 font-light">
+                        <li>— 20-30 min high-efficiency session</li>
+                        <li>— Bi-annual refreshes</li>
+                        <li>— 48-hour digital delivery</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
-
-        <section id="archive" class="mb-48">
-            <h2 class="section-header">04. Selected Archive</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="aspect-[2/3] bg-gray-100 border border-gray-200"></div>
-                <div class="aspect-[2/3] bg-gray-100 border border-gray-200"></div>
-                <div class="aspect-[2/3] bg-gray-100 border border-gray-200"></div>
-                <div class="aspect-[2/3] bg-gray-100 border border-gray-200"></div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer id="inquire" class="py-32 bg-zinc-50 border-t border-gray-100 px-8">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
-            <div>
-                <h2 class="text-3xl font-light uppercase tracking-tighter mb-4 italic">Work With Me</h2>
-                <div class="space-y-2 text-xs uppercase tracking-[0.2em] font-light">
-                    <p><a href="mailto:tinimontelibano@gmail.com" class="hover:underline">tinimontelibano@gmail.com</a> </p>
-                    <p><a href="tel:639192871171" class="hover:underline">+63 919 287 1171</a> [cite: 190]</p>
+                <div>
+                    <h3 class="font-bold text-xs uppercase mb-4">Uniform</h3>
+                    <ul class="text-sm space-y-2 font-light">
+                        <li>— Top: Black Tank/Tube</li>
+                        <li>— Bottoms: Black Jeans/Trousers</li>
+                        <li>— Shoes: Black Open Toed Heels</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="text-right">
-                <a href="https://www.instagram.com/tinimonty/" target="_blank" class="text-[10px] uppercase tracking-widest border border-black px-10 py-4 hover:bg-black hover:text-white transition-all">
-                    Instagram @tinimonty [cite: 191]
-                </a>
-                <p class="mt-8 text-[8px] text-gray-300 uppercase tracking-widest italic">© 2026 Tini Montelibano</p>
             </div>
         </div>
-    </footer>
+    </div>
 
-</body>
-</html>
+    <div id="inquire" class="modal">
+        <span class="close-btn" onclick="closeModal()">×</span>
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="text-[10px] uppercase tracking-widest mb-12">Inquire / Book</h2>
+            <div class="space-y-6">
+                <p class="text-2xl font-light">tinimontelibano@gmail.com</p>
+                <p class="text-xl font-light">+63 919 287 1171</p>
+                <a href="https://www.instagram.com/tinimonty/" target="_blank" class="block text-xs underline tracking-widest">@TINIMONTY</a>
