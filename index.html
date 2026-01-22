@@ -5,40 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TINI MONTELIBANO | CREATIVE DIRECTOR</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; letter-spacing: -0.02em; scroll-behavior: smooth; }
-        .kerning-wide { letter-spacing: 0.3em; }
-        .kerning-extra { letter-spacing: 0.5em; }
-        .nav-link { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; transition: all 0.3s; border-bottom: 1px solid transparent; }
-        .nav-link:hover { border-bottom: 1px solid #000; padding-bottom: 2px; }
-        .section-table th, .section-table td { border: 1px solid #000; padding: 20px; }
-        .contact-link { transition: opacity 0.3s; }
-        .contact-link:hover { opacity: 0.5; }
+        body { font-family: 'Inter', sans-serif; background-color: #fdfdfd; color: #1a1a1a; scroll-behavior: smooth; }
+        .nav-text { font-size: 10px; letter-spacing: 0.15em; color: #888; transition: color 0.3s; text-transform: uppercase; }
+        .nav-text:hover { color: #000; }
+        .hero-split { height: 100vh; display: flex; flex-direction: column; }
+        @media (min-width: 768px) { .hero-split { flex-direction: row; } }
+        .hero-panel { flex: 1; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 0.5px solid #eee; }
+        .hero-label { position: absolute; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3em; color: white; border: 1px solid white; padding: 6px 20px; z-index: 10; }
+        .section-header { font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; border-bottom: 1px solid #000; display: inline-block; margin-bottom: 3rem; font-weight: 400; }
+        .price-row { border-bottom: 1px solid #eee; }
+        .uniform-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: #aaa; margin-bottom: 4px; display: block; }
     </style>
 </head>
-<body class="bg-white text-black antialiased">
+<body>
 
-    <div class="h-screen flex flex-col justify-center items-center px-6 text-center">
-        <h1 class="text-5xl md:text-7xl font-bold uppercase kerning-wide mb-4">Tini Montelibano</h1>
-        <p class="font-light uppercase text-xs kerning-extra text-gray-400 mb-12">Creative Director & Stylist</p>
-        
-        <nav class="flex flex-wrap justify-center gap-8 md:gap-12 mb-16">
-            <a href="#partnership" class="nav-link">Agency Partnership</a>
-            <a href="#production" class="nav-link">Production Guide</a>
-            <a href="#portfolio" class="nav-link">Portfolio</a>
-            <a href="#contact" class="nav-link text-gray-400">Inquire</a>
-        </nav>
-        
-        <div class="absolute bottom-10 animate-pulse">
-            <p class="text-[9px] uppercase tracking-[0.5em] text-gray-300">Explore</p>
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-6 bg-white/90 backdrop-blur-md border-b border-gray-50">
+        <div class="hidden md:flex gap-8">
+            <a href="#partnerships" class="nav-text">Partnerships</a>
+            <a href="#studio" class="nav-text">Studio</a>
         </div>
+        <div class="absolute left-1/2 -translate-x-1/2 text-center">
+            <a href="#" class="text-xs font-normal tracking-[0.4em] uppercase">Tini Montelibano</a>
+        </div>
+        <div class="flex gap-8">
+            <a href="#archive" class="nav-text">Archive</a>
+            <a href="#inquire" class="nav-text">Inquire</a>
+        </div>
+    </nav>
+
+    <div class="hero-split pt-[60px]">
+        <a href="#partnerships" class="hero-panel bg-gray-100 group">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover grayscale brightness-75 transition-transform duration-1000 group-hover:scale-110" alt="Roster">
+            <span class="hero-label">Roster</span>
+        </a>
+        <a href="#inquire" class="hero-panel bg-gray-200 group">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover grayscale brightness-75 transition-transform duration-1000 group-hover:scale-110" alt="Individual">
+            <span class="hero-label">Individual</span>
+        </a>
     </div>
 
-    <section id="partnership" class="max-w-4xl mx-auto px-6 py-32 border-t border-black">
-        <h2 class="text-3xl font-bold uppercase mb-2">Portfolio Partnership</h2>
-        <p class="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-12">Strategic Maintenance for Global Roster Standards</p>
+    <main class="max-w-5xl mx-auto px-8 py-32">
         
-        <table class="w-full border-
+        <section id="partnerships" class="mb-48">
+            <h2 class="section-header">01. Agency Partnerships</h2>
+            <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-8">Collaborations: Luminary, Eiveren, Mercator, I-Agency </p>
+            
+            <div class="space-y-0 border-t border-black">
+                <div class="price-row flex justify-between items-center py-12">
+                    <div>
+                        <h3 class="text-2xl uppercase font-light tracking-tighter">Starter Pack</h3>
+                        <p class="text-[9px] uppercase tracking-widest text-gray-400">03 Talent — 8% Reduction [cite: 142, 143, 144]</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xl font-normal tracking-tight">24,150 PHP [cite: 145]</p>
+                        <p class="text-[9px] uppercase text-gray-300">Bi-Annual Update [cite: 164]</p>
+                    </div>
+                </div>
+                <div class="price-row flex justify-between items-center py-12">
+                    <div>
+                        <h3 class="text-2xl uppercase font-light tracking-tighter">Division Refresh</h3>
+                        <p class="text-[9px] uppercase tracking-widest text-gray-400">10 Talent — 11% Reduction [cite: 146, 147, 148]</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xl font-normal tracking-tight">77,875 PHP [cite: 156]</p>
+                    </div>
+                </div>
+                <div class="price-row flex justify-between items-center py-12 bg-black text-white px-4 -mx-4">
+                    <div>
+                        <h3 class="text-2xl uppercase font-light tracking-tighter">Elite Partnership</h3>
+                        <p class="text-[9px] uppercase tracking-widest text-gray-500">20 Talent — 15% Reduction [cite: 150, 151, 152]</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xl font-normal tracking-tight text-white">148,750 PHP [cite: 157]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="studio" class="mb-48 grid md:grid-cols-2 gap-24">
+            <div>
+                <h2 class="section-header">02. Studio Protocol</h2>
+                <ul class="space-y-8 text-sm font-light leading-relaxed">
+                    <li><span class="uniform-tag">The Format</span> 20-30 minute high-efficiency sessions with 48-hour digital proof delivery. [cite: 163, 166]</li>
+                    <li><span class="uniform-tag">Direction</span> Curated creative direction by Tini Montelibano focused on international marketability. [cite: 165]</li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="section-header">03. Uniform</h2>
+                <div class="space-y-6 text-[11px] uppercase tracking-widest leading-loose">
+                    <p><span class="text-gray-400">Top /</span> Black Tank or Tube </p>
+                    <p><span class="text-gray-400">Bottom /</span> Black Jeans or Trousers </p>
+                    <p><span class="text-gray-400">Shoes /</span> Black Open Toed Heels </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="archive" class="mb-48">
+            <h2 class="section-header">04. Selected Archive</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-[2/3] bg-gray-100 border border-gray-200"></div>
+                <div class="aspect-[2/3] bg-gray-100 border border-gray-200"></div>
+                <div class="aspect-[2/3] bg-gray-100 border border-gray-200"></div>
+                <div class="aspect-[2/3] bg-gray-100 border border-gray-200"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="inquire" class="py-32 bg-zinc-50 border-t border-gray-100 px-8">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
+            <div>
+                <h2 class="text-3xl font-light uppercase tracking-tighter mb-4 italic">Work With Me</h2>
+                <div class="space-y-2 text-xs uppercase tracking-[0.2em] font-light">
+                    <p><a href="mailto:tinimontelibano@gmail.com" class="hover:underline">tinimontelibano@gmail.com</a> </p>
+                    <p><a href="tel:639192871171" class="hover:underline">+63 919 287 1171</a> [cite: 190]</p>
+                </div>
+            </div>
+            <div class="text-right">
+                <a href="https://www.instagram.com/tinimonty/" target="_blank" class="text-[10px] uppercase tracking-widest border border-black px-10 py-4 hover:bg-black hover:text-white transition-all">
+                    Instagram @tinimonty [cite: 191]
+                </a>
+                <p class="mt-8 text-[8px] text-gray-300 uppercase tracking-widest italic">© 2026 Tini Montelibano</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
